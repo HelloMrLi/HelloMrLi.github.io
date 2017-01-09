@@ -3,25 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hello world | 木子Jerry Blog</title>
+  <title>unity3d之monobehaviour的可重写函数整理 | 木子Jerry Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="unityMonoBehaviour" />
   
   
   
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  
+  <meta name="description" content="Update
+ 当MonoBehaviour启用时，其Update在每一帧被调用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/01/04/hello-world/index.html">
+<meta property="og:title" content="Unity3d之MonoBehaviour的可重写函数整理">
+<meta property="og:url" content="http://yoursite.com/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/index.html">
 <meta property="og:site_name" content="木子Jerry Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-01-04T14:12:23.614Z">
+<meta property="og:description" content="Update
+ 当MonoBehaviour启用时，其Update在每一帧被调用。">
+<meta property="og:updated_time" content="2017-01-09T04:52:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Unity3d之MonoBehaviour的可重写函数整理">
+<meta name="twitter:description" content="Update
+ 当MonoBehaviour启用时，其Update在每一帧被调用。">
   
     <link rel="alternate" href="/atom.xml" title="木子Jerry Blog" type="application/atom+xml">
   
@@ -96,7 +98,7 @@ Quick">
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-hello-world" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Unity3d之MonoBehaviour的可重写函数整理" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -104,7 +106,7 @@ Quick">
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Hello World
+      Unity3d之MonoBehaviour的可重写函数整理
     </h1>
   
 
@@ -112,34 +114,183 @@ Quick">
     
     <div class="article-meta">
       
-	Posted on <a href="/2017/01/04/hello-world/" class="article-date">
-	  <time datetime="2017-01-04T13:57:41.143Z" itemprop="datePublished">一月 4, 2017</time>
+	Posted on <a href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/" class="article-date">
+	  <time datetime="2017-01-09T04:47:15.000Z" itemprop="datePublished">一月 9, 2017</time>
 	</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <ol>
+<li><p>Update</p>
+<p> 当MonoBehaviour启用时，其Update在每一帧被调用。<a id="more"></a></p>
+</li>
+<li><p>LateUpdate</p>
+<p>当Behaviour启用时，其LateUpdate在每一帧被调用。</p>
+</li>
+<li><p>FixedUpdate</p>
+<p>当MonoBehaviour启用时，其 FixedUpdate 在每一帧被调用。</p>
+</li>
+<li><p>Awake</p>
+<p>当一个脚本实例被载入时Awake被调用。</p>
+</li>
+<li><p>Start</p>
+<p>Start仅在Update函数第一次被调用前调用。</p>
+</li>
+<li><p>Reset</p>
+<p>重置为默认值。</p>
+</li>
+<li><p>OnMouseEnter</p>
+<p>当鼠标进入到GUIElement(GUI元素)或Collider(碰撞体)中时调用OnMouseEnter。</p>
+</li>
+<li><p>OnMouseOver</p>
+<p>当鼠标悬浮在GUIElement(GUI元素)或Collider(碰撞体)上时调用 OnMouseOver .</p>
+</li>
+<li><p>OnMouseExit</p>
+<p>当鼠标移出GUIElement(GUI元素)或Collider(碰撞体)上时调用OnMouseExit。</p>
+</li>
+<li><p>OnMouseDown</p>
+<p>当鼠标在GUIElement(GUI元素)或Collider(碰撞体)上点击时调用OnMouseDown。</p>
+</li>
+<li><p>OnMouseUp</p>
+<p>当用户释放鼠标按钮时调用OnMouseUp。</p>
+</li>
+<li><p>OnMouseUpAsButton</p>
+<p>OnMouseUpAsButton只有当鼠标在同一个GUIElement或Collider按下，在释放时调用。</p>
+</li>
+<li><p>OnMouseDrag</p>
+<p>当用户鼠标拖拽GUIElement(GUI元素)或Collider(碰撞体)时调用 OnMouseDrag 。</p>
+</li>
+<li><p>OnTriggerEnter</p>
+<p>当Collider(碰撞体)进入trigger(触发器)时调用OnTriggerEnter。</p>
+</li>
+<li><p>OnTriggerExit</p>
+<p>当Collider(碰撞体)停止触发trigger(触发器)时调用OnTriggerExit。</p>
+</li>
+<li><p>OnTriggerStay</p>
+<p>当碰撞体接触触发器时，OnTriggerStay将在每一帧被调用。</p>
+</li>
+<li><p>OnCollisionEnter</p>
+<p>当此collider/rigidbody触发另一个rigidbody/collider时，OnCollisionEnter将被调用。</p>
+</li>
+<li><p>OnCollisionExit</p>
+<p>当此collider/rigidbody停止触发另一个rigidbody/collider时，OnCollisionExit将被调用。</p>
+</li>
+<li><p>OnCollisionStay</p>
+<p>当此collider/rigidbody触发另一个rigidbody/collider时，OnCollisionStay将会在每一帧被调用。</p>
+</li>
+<li><p>OnControllerColliderHit</p>
+<p>在移动的时，当controller碰撞到collider时OnControllerColliderHit被调用。</p>
+</li>
+<li><p>OnJointBreak</p>
+<p>当附在同一对象上的关节被断开时调用。</p>
+</li>
+<li><p>OnParticleCollision</p>
+<p>当粒子碰到collider时被调用。</p>
+</li>
+<li><p>OnBecameVisible</p>
+<p>当renderer(渲染器)在任何相机上可见时调用OnBecameVisible。</p>
+</li>
+<li><p>OnBecameInvisible</p>
+<p>当renderer(渲染器)在任何相机上都不可见时调用OnBecameInvisible。</p>
+</li>
+<li><p>OnLevelWasLoaded</p>
+<p>当一个新关卡被载入时此函数被调用。</p>
+</li>
+<li><p>OnEnable</p>
+<p>当对象变为可用或激活状态时此函数被调用。</p>
+</li>
+<li><p>OnDisable</p>
+<p>当对象变为不可用或非激活状态时此函数被调用。</p>
+</li>
+<li><p>OnDestroy</p>
+<p>当MonoBehaviour将被销毁时，这个函数被调用。</p>
+</li>
+<li><p>OnPreCull</p>
+<p>在相机消隐场景之前被调用。</p>
+</li>
+<li><p>OnPreRender</p>
+<p>在相机渲染场景之前被调用。</p>
+</li>
+<li><p>OnPostRender</p>
+<p>在相机完成场景渲染之后被调用。</p>
+</li>
+<li><p>OnRenderObject</p>
+<p>在相机场景渲染完成后被调用。</p>
+</li>
+<li><p>OnWillRenderObject</p>
+<p>如果对象可见每个相机都会调用它。</p>
+</li>
+<li><p>OnGUI</p>
+<p>渲染和处理GUI事件时调用。</p>
+</li>
+<li><p>OnRenderImage</p>
+<p>当完成所有渲染图片后被调用，用来渲染图片后期效果。</p>
+</li>
+<li><p>OnDrawGizmosSelected</p>
+<p>如果你想在物体被选中时绘制gizmos，执行这个函数。</p>
+</li>
+<li><p>OnDrawGizmos</p>
+<p>如果你想绘制可被点选的gizmos，执行这个函数。</p>
+</li>
+<li><p>OnApplicationPause</p>
+<p>当玩家暂停时发送到所有的游戏物体。</p>
+</li>
+<li><p>OnApplicationFocus</p>
+<p>当玩家获得或失去焦点时发送给所有游戏物体。</p>
+</li>
+<li><p>OnApplicationQuit</p>
+<p>在应用退出之前发送给所有的游戏物体。</p>
+</li>
+<li><p>OnPlayerConnected</p>
+<p>当一个新玩家成功连接时在服务器上被调用。</p>
+</li>
+<li><p>OnServerInitialized</p>
+<p>当Network.InitializeServer被调用并完成时，在服务器上调用这个函数。</p>
+</li>
+<li><p>OnConnectedToServer</p>
+<p>当你成功连接到服务器时，在客户端调用。</p>
+</li>
+<li><p>OnPlayerDisconnected</p>
+<p>当一个玩家从服务器上断开时在服务器端调用。</p>
+</li>
+<li><p>OnDisconnectedFromServer</p>
+<p>当失去连接或从服务器端断开时在客户端调用。</p>
+</li>
+<li><p>OnFailedToConnect</p>
+<p>当一个连接因为某些原因失败时在客户端调用。</p>
+</li>
+<li><p>OnFailedToConnectToMasterServer</p>
+<p>当报告事件来自主服务器时在客户端或服务器端调用。</p>
+</li>
+<li><p>OnMasterServerEvent</p>
+<p>当报告事件来自主服务器时在客户端或服务器端调用。</p>
+</li>
+<li><p>OnNetworkInstantiate</p>
+<p>当一个物体使用Network.Instantiate进行网络初始化时调用。</p>
+</li>
+<li><p>OnSerializeNetworkView</p>
+<p>在一个网络视图脚本中，用于自定义变量同步。</p>
+</li>
+</ol>
 
       
     </div>
     <footer class="entry-meta entry-footer">
       
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/unity/">unity</a>
+
       
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MonoBehaviour/">MonoBehaviour</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unity/">unity</a></li></ul>
+
       
         
 	<div id="comment">
 	
 	<!-- 多说评论框 start -->
-	 <div class="ds-thread" data-thread-key="/2017/01/04/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2017/01/04/hello-world/"></div>
+	 <div class="ds-thread" data-thread-key="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/" data-title="Unity3d之MonoBehaviour的可重写函数整理" data-url="http://yoursite.com/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -166,15 +317,20 @@ Quick">
     
 <nav id="article-nav">
   
-    <a href="/2017/01/07/github简易教程/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/09/关于开发类库后使用无法看到注释的解决方法/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          gihub简易教程
+          关于开发类库后使用无法看到注释的解决方法
         
       </div>
     </a>
   
+  
+    <a href="/2017/01/08/SQL链接异常总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">SQL链接异常总结</div>
+    </a>
   
 </nav>
 
@@ -187,7 +343,7 @@ Quick">
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    <ol class="toc">无</ol>
     
     </div>
   </aside>

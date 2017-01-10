@@ -117,7 +117,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+        <a id="more"></a>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -141,7 +142,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-github 传输速度慢解决方法"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Unity3d之MonoBehaviour的可重写函数整理"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -149,7 +150,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/01/09/github 传输速度慢解决方法/">github 传输速度慢解决方法</a>
+      <a class="article-title" href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/">Unity3d之MonoBehaviour的可重写函数整理</a>
     </h1>
   
 
@@ -157,7 +158,7 @@
     
     <div class="article-meta">
       
-	Posted on <a href="/2017/01/09/github 传输速度慢解决方法/" class="article-date">
+	Posted on <a href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/" class="article-date">
 	  <time datetime="2017-01-09T04:47:15.000Z" itemprop="datePublished">一月 9, 2017</time>
 	</a>
 
@@ -168,19 +169,35 @@
 
           
             <div class="entry-summary" style="margin-left:0;">
-            github被防火长城限制了？？怎么办？
-原来是这个域名github.global.ssl.fastly.NET被限制。很简单，去查查这个域名对应的ip，然后修改自己电脑的hosts文件
-查询地址：http://tool.chinaz.com/dns
-选择一个最小的TTL值，最小一般为30
-然后打开C-&gt;windows-&gt;system32-&gt;driver-&gt;etc-&gt;hosts,在最后一行加入如下一句：
-151.101.72.249 github.global.ssl.fastly.Net
-这样本来5-6k的传输速度提高到600k左右了！！
+            
+Update
+ 当MonoBehaviour启用时，其Update在每一帧被调用。
 
+LateUpdate
+当Behaviour启用时，其LateUpdate在每一帧被调用。
+
+FixedUpdate
+当MonoBehaviour启用时，其 FixedUpdate 在每一帧被调用。
+
+Awake
+当一个脚本实例被载入时Awake被调用。
+
+Start
+Start仅在Update函数第一次被调用前调用。
+
+Reset
+重置为默认值。
+
+OnMouseEnter
+当鼠标进入到GUIElement(GUI元素)或Collider(碰撞体)中时调用OnMouseEnter。
+
+OnMouseOver
+当鼠标悬浮在GUIElement(GUI元素)或Collider(碰撞体)上时调用 OnMo...
           
 
         
           <p class="article-more-link">
-            <a href="/2017/01/09/github 传输速度慢解决方法/#more">阅读全文</a>
+            <a href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/#more">阅读全文</a>
           </p>
         </div>
       
@@ -188,11 +205,11 @@
     <footer class="entry-meta entry-footer">
       
 	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/github/">github</a>
+    <a class="article-category-link" href="/categories/unity/">unity</a>
 
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MonoBehaviour/">MonoBehaviour</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unity/">unity</a></li></ul>
 
       
     </footer>
@@ -300,7 +317,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-Unity3d之MonoBehaviour的可重写函数整理"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-github 传输速度慢解决方法"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -308,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/">Unity3d之MonoBehaviour的可重写函数整理</a>
+      <a class="article-title" href="/2017/01/09/github 传输速度慢解决方法/">github 传输速度慢解决方法</a>
     </h1>
   
 
@@ -316,7 +333,7 @@
     
     <div class="article-meta">
       
-	Posted on <a href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/" class="article-date">
+	Posted on <a href="/2017/01/09/github 传输速度慢解决方法/" class="article-date">
 	  <time datetime="2017-01-09T04:47:15.000Z" itemprop="datePublished">一月 9, 2017</time>
 	</a>
 
@@ -327,35 +344,19 @@
 
           
             <div class="entry-summary" style="margin-left:0;">
-            
-Update
- 当MonoBehaviour启用时，其Update在每一帧被调用。
+            github被防火长城限制了？？怎么办？
+原来是这个域名github.global.ssl.fastly.NET被限制。很简单，去查查这个域名对应的ip，然后修改自己电脑的hosts文件
+查询地址：http://tool.chinaz.com/dns
+选择一个最小的TTL值，最小一般为30
+然后打开C-&gt;windows-&gt;system32-&gt;driver-&gt;etc-&gt;hosts,在最后一行加入如下一句：
+151.101.72.249 github.global.ssl.fastly.Net
+这样本来5-6k的传输速度提高到600k左右了！！
 
-LateUpdate
-当Behaviour启用时，其LateUpdate在每一帧被调用。
-
-FixedUpdate
-当MonoBehaviour启用时，其 FixedUpdate 在每一帧被调用。
-
-Awake
-当一个脚本实例被载入时Awake被调用。
-
-Start
-Start仅在Update函数第一次被调用前调用。
-
-Reset
-重置为默认值。
-
-OnMouseEnter
-当鼠标进入到GUIElement(GUI元素)或Collider(碰撞体)中时调用OnMouseEnter。
-
-OnMouseOver
-当鼠标悬浮在GUIElement(GUI元素)或Collider(碰撞体)上时调用 OnMo...
           
 
         
           <p class="article-more-link">
-            <a href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/#more">阅读全文</a>
+            <a href="/2017/01/09/github 传输速度慢解决方法/#more">阅读全文</a>
           </p>
         </div>
       
@@ -363,11 +364,11 @@ OnMouseOver
     <footer class="entry-meta entry-footer">
       
 	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/unity/">unity</a>
+    <a class="article-category-link" href="/categories/github/">github</a>
 
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MonoBehaviour/">MonoBehaviour</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unity/">unity</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
 
       
     </footer>
@@ -560,19 +561,42 @@ OnMouseOver
     <div class="widget-wrap" style="margin: 20px 0;">
 	<div id="search-form-wrap">
 
-    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
-    <input name="wd" type="text" class="search-form-input" placeholder="index.search" />
-    <button type="submit" class="search-form-submit"></button>
-</form>
+    <form class="search-form">
+        <label style="width: 75%;">
+            <span class="screen-reader-text">Search for:</span>
+            <input type="search" class="search-field" style="height: 42px;" placeholder=" 搜索…" value="" name="s" title="Search for:">
+        </label>
+        <input type="submit" class="search-form-submit" value="搜索">
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
 <script>
-(function ($) {
-    $('.search-form').on('submit', function (e) {
-        var keyword = $('.search-form-input[name="wd"]').val();
-        window.location = 'https://www.baidu.com/s?wd=site:yoursite.com ' + keyword;
-        return false;
-    });
-})(jQuery);
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
 </script>
+<script src="/js/insight.js"></script>
 
 </div>
 </div>

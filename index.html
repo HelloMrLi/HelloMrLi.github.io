@@ -142,7 +142,7 @@ Generate static files1$ hexo generat...
 <!-- Table of Contents -->
 
   
-    <article id="post-关于开发类库后使用无法看到注释的解决方法"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Unity3d之常遇问题整理"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -150,7 +150,7 @@ Generate static files1$ hexo generat...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/01/09/关于开发类库后使用无法看到注释的解决方法/">关于开发类库后使用无法看到注释的解决方法</a>
+      <a class="article-title" href="/2017/01/09/Unity3d之常遇问题整理/">Unity3d之常遇问题整理</a>
     </h1>
   
 
@@ -158,7 +158,7 @@ Generate static files1$ hexo generat...
     
     <div class="article-meta">
       
-	Posted on <a href="/2017/01/09/关于开发类库后使用无法看到注释的解决方法/" class="article-date">
+	Posted on <a href="/2017/01/09/Unity3d之常遇问题整理/" class="article-date">
 	  <time datetime="2017-01-09T04:47:15.000Z" itemprop="datePublished">一月 9, 2017</time>
 	</a>
 
@@ -166,94 +166,12 @@ Generate static files1$ hexo generat...
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
+<p>整理一些unity开发中遇到的问题，文档持续更新！<br><!-- more --></p>
 <ol>
-<li>使用三个斜杠的格式方法注释的格式：</li>
+<li>unity和vs开发中，每次双击脚本都会弹出一个新的vs窗口问题，解决方法：删除根目录下的vs相关程序集文件即可。</li>
+<li></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/// &lt;summary&gt; </div><div class="line">/// 这是一个方法的注释，类其他都一样</div><div class="line">/// &lt;/summary&gt;</div><div class="line">void Method()</div><div class="line">&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>设置类库生存xml，并拷贝到引用的地方</li>
-</ol>
-<p><strong>具体设置是：</strong>项目右键—&gt;属性—&gt;生成—&gt;XML文档文件选中再编译</p>
-<p><strong>引用动态类库时</strong>，把类库和同名的xml文件放到同一个文件夹内即可。</p>
 
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/C/">C#</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/类库/">类库</a></li></ul>
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-Unity3d之MonoBehaviour的可重写函数整理"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/">Unity3d之MonoBehaviour的可重写函数整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/" class="article-date">
-	  <time datetime="2017-01-09T04:47:15.000Z" itemprop="datePublished">一月 9, 2017</time>
-	</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-
-          
-            <div class="entry-summary" style="margin-left:0;">
-            
-Update
- 当MonoBehaviour启用时，其Update在每一帧被调用。
-
-LateUpdate
-当Behaviour启用时，其LateUpdate在每一帧被调用。
-
-FixedUpdate
-当MonoBehaviour启用时，其 FixedUpdate 在每一帧被调用。
-
-Awake
-当一个脚本实例被载入时Awake被调用。
-
-Start
-Start仅在Update函数第一次被调用前调用。
-
-Reset
-重置为默认值。
-
-OnMouseEnter
-当鼠标进入到GUIElement(GUI元素)或Collider(碰撞体)中时调用OnMouseEnter。
-
-OnMouseOver
-当鼠标悬浮在GUIElement(GUI元素)或Collider(碰撞体)上时调用 OnMo...
-          
-
-        
-          <p class="article-more-link">
-            <a href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/#more">阅读全文</a>
-          </p>
-        </div>
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -264,68 +182,6 @@ OnMouseOver
       
   <span class="ico-tags"></span>
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MonoBehaviour/">MonoBehaviour</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unity/">unity</a></li></ul>
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-github 传输速度慢解决方法"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/01/09/github 传输速度慢解决方法/">github 传输速度慢解决方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2017/01/09/github 传输速度慢解决方法/" class="article-date">
-	  <time datetime="2017-01-09T04:47:15.000Z" itemprop="datePublished">一月 9, 2017</time>
-	</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-
-          
-            <div class="entry-summary" style="margin-left:0;">
-            github被防火长城限制了？？怎么办？
-原来是这个域名github.global.ssl.fastly.NET被限制。很简单，去查查这个域名对应的ip，然后修改自己电脑的hosts文件
-查询地址：http://tool.chinaz.com/dns
-选择一个最小的TTL值，最小一般为30
-然后打开C-&gt;windows-&gt;system32-&gt;driver-&gt;etc-&gt;hosts,在最后一行加入如下一句：
-151.101.72.249 github.global.ssl.fastly.Net
-这样本来5-6k的传输速度提高到600k左右了！！
-
-          
-
-        
-          <p class="article-more-link">
-            <a href="/2017/01/09/github 传输速度慢解决方法/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/github/">github</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
 
       
     </footer>
@@ -420,6 +276,200 @@ OnMouseOver
       
   <span class="ico-tags"></span>
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MonoBehaviour/">MonoBehaviour</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unity/">unity</a></li></ul>
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-github 传输速度慢解决方法"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/01/09/github 传输速度慢解决方法/">github 传输速度慢解决方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/01/09/github 传输速度慢解决方法/" class="article-date">
+	  <time datetime="2017-01-09T04:47:15.000Z" itemprop="datePublished">一月 9, 2017</time>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            github被防火长城限制了？？怎么办？
+原来是这个域名github.global.ssl.fastly.NET被限制。很简单，去查查这个域名对应的ip，然后修改自己电脑的hosts文件
+查询地址：http://tool.chinaz.com/dns
+选择一个最小的TTL值，最小一般为30
+然后打开C-&gt;windows-&gt;system32-&gt;driver-&gt;etc-&gt;hosts,在最后一行加入如下一句：
+151.101.72.249 github.global.ssl.fastly.Net
+这样本来5-6k的传输速度提高到600k左右了！！
+
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2017/01/09/github 传输速度慢解决方法/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/github/">github</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Unity3d之MonoBehaviour的可重写函数整理"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/">Unity3d之MonoBehaviour的可重写函数整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/" class="article-date">
+	  <time datetime="2017-01-09T04:47:15.000Z" itemprop="datePublished">一月 9, 2017</time>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            
+Update
+ 当MonoBehaviour启用时，其Update在每一帧被调用。
+
+LateUpdate
+当Behaviour启用时，其LateUpdate在每一帧被调用。
+
+FixedUpdate
+当MonoBehaviour启用时，其 FixedUpdate 在每一帧被调用。
+
+Awake
+当一个脚本实例被载入时Awake被调用。
+
+Start
+Start仅在Update函数第一次被调用前调用。
+
+Reset
+重置为默认值。
+
+OnMouseEnter
+当鼠标进入到GUIElement(GUI元素)或Collider(碰撞体)中时调用OnMouseEnter。
+
+OnMouseOver
+当鼠标悬浮在GUIElement(GUI元素)或Collider(碰撞体)上时调用 OnMo...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2017/01/09/Unity3d之MonoBehaviour的可重写函数整理/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/unity/">unity</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MonoBehaviour/">MonoBehaviour</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unity/">unity</a></li></ul>
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-关于开发类库后使用无法看到注释的解决方法"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/01/09/关于开发类库后使用无法看到注释的解决方法/">关于开发类库后使用无法看到注释的解决方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/01/09/关于开发类库后使用无法看到注释的解决方法/" class="article-date">
+	  <time datetime="2017-01-09T04:47:15.000Z" itemprop="datePublished">一月 9, 2017</time>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<ol>
+<li>使用三个斜杠的格式方法注释的格式：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/// &lt;summary&gt; </div><div class="line">/// 这是一个方法的注释，类其他都一样</div><div class="line">/// &lt;/summary&gt;</div><div class="line">void Method()</div><div class="line">&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>设置类库生存xml，并拷贝到引用的地方</li>
+</ol>
+<p><strong>具体设置是：</strong>项目右键—&gt;属性—&gt;生成—&gt;XML文档文件选中再编译</p>
+<p><strong>引用动态类库时</strong>，把类库和同名的xml文件放到同一个文件夹内即可。</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/C/">C#</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/类库/">类库</a></li></ul>
 
       
     </footer>
@@ -634,7 +684,7 @@ OnMouseOver
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MSSQL/">MSSQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/github/">github</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MSSQL/">MSSQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/github/">github</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -644,7 +694,7 @@ OnMouseOver
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MonoBehaviour/">MonoBehaviour</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql异常/">sql异常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类库/">类库</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MonoBehaviour/">MonoBehaviour</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql异常/">sql异常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类库/">类库</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -655,7 +705,7 @@ OnMouseOver
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 

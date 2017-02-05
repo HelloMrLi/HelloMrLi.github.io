@@ -11,19 +11,16 @@
   
   
   
-  <meta name="description" content="开发了新的UI系统UGUI，附带的事件系统EventSystem不仅可以用于UI，对于场景中的对象也同样适用。网络上有很多使用说明，但是仅仅是怎么用而已……这篇文章是我翻了无数遍官方手册整理出来的，包括自己的理解，还有官方文档的传送门，也许你会有兴趣。
-一、 EventSystem对象的说明当我们在场景中创建任一UI对象后，Hierarchy面板中都可以看到系统自动创建了对象EventSyste">
+  <meta name="description" content="开发了新的UI系统UGUI，附带的事件系统EventSystem不仅可以用于UI，对于场景中的对象也同样适用。网络上有很多使用说明，但是仅仅是怎么用而已……这篇文章是我翻了无数遍官方手册整理出来的，包括自己的理解，还有官方文档的传送门，也许你会有兴趣。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity3d之EventTrigger">
 <meta property="og:url" content="http://hellomrli.github.io/2017/01/09/Unity3d之EventTrigger/index.html">
 <meta property="og:site_name" content="木子Jerry Blog">
-<meta property="og:description" content="开发了新的UI系统UGUI，附带的事件系统EventSystem不仅可以用于UI，对于场景中的对象也同样适用。网络上有很多使用说明，但是仅仅是怎么用而已……这篇文章是我翻了无数遍官方手册整理出来的，包括自己的理解，还有官方文档的传送门，也许你会有兴趣。
-一、 EventSystem对象的说明当我们在场景中创建任一UI对象后，Hierarchy面板中都可以看到系统自动创建了对象EventSyste">
-<meta property="og:updated_time" content="2017-02-05T06:09:40.000Z">
+<meta property="og:description" content="开发了新的UI系统UGUI，附带的事件系统EventSystem不仅可以用于UI，对于场景中的对象也同样适用。网络上有很多使用说明，但是仅仅是怎么用而已……这篇文章是我翻了无数遍官方手册整理出来的，包括自己的理解，还有官方文档的传送门，也许你会有兴趣。">
+<meta property="og:updated_time" content="2017-02-05T08:51:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity3d之EventTrigger">
-<meta name="twitter:description" content="开发了新的UI系统UGUI，附带的事件系统EventSystem不仅可以用于UI，对于场景中的对象也同样适用。网络上有很多使用说明，但是仅仅是怎么用而已……这篇文章是我翻了无数遍官方手册整理出来的，包括自己的理解，还有官方文档的传送门，也许你会有兴趣。
-一、 EventSystem对象的说明当我们在场景中创建任一UI对象后，Hierarchy面板中都可以看到系统自动创建了对象EventSyste">
+<meta name="twitter:description" content="开发了新的UI系统UGUI，附带的事件系统EventSystem不仅可以用于UI，对于场景中的对象也同样适用。网络上有很多使用说明，但是仅仅是怎么用而已……这篇文章是我翻了无数遍官方手册整理出来的，包括自己的理解，还有官方文档的传送门，也许你会有兴趣。">
   
     <link rel="alternate" href="/atom.xml" title="木子Jerry Blog" type="application/atom+xml">
   
@@ -115,8 +112,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>开发了新的UI系统UGUI，附带的事件系统EventSystem不仅可以用于UI，对于场景中的对象也同样适用。网络上有很多使用说明，但是仅仅是怎么用而已……这篇文章是我翻了无数遍官方手册整理出来的，包括自己的理解，还有官方文档的传送门，也许你会有兴趣。<br><!-- more --></p>
+        <p>开发了新的UI系统UGUI，附带的事件系统EventSystem不仅可以用于UI，对于场景中的对象也同样适用。网络上有很多使用说明，但是仅仅是怎么用而已……这篇文章是我翻了无数遍官方手册整理出来的，包括自己的理解，还有官方文档的传送门，也许你会有兴趣。<br><a id="more"></a></p>
 <h1 id="一、-EventSystem对象的说明"><a href="#一、-EventSystem对象的说明" class="headerlink" title="一、 EventSystem对象的说明"></a>一、 EventSystem对象的说明</h1><p>当我们在场景中创建任一UI对象后，Hierarchy面板中都可以看到系统自动创建了对象EventSystem，可以看到该对象下有三个组件：EventSystem、StandaloneInputModule、TouchInputModule，后面两个组件都继承自BaseInputModule。<br>EventSystem组件主要负责处理输入、射线投射以及发送事件。一个场景中只能有一个EventSystem组件，并且需要BaseInputModule类型组件的协助才能工作。EventSystem在一开始的时候会把自己所属对象下的BaseInputModule类型组件加到一个内部列表，并且在每个Update周期通过接口UpdateModules接口调用这些基本输入模块的UpdateModule接口，然后BaseInputModule会在UpdateModule接口中将自己的状态修改成’Updated’，之后BaseInputModule的Process接口才会被调用。<br>BaseInputModule是一个基类模块，负责发送输入事件（点击、拖拽、选中等）到具体对象。EventSystem下的所有输入模块都必须继承自BaseInputModule组件。StandaloneInputModule和TouchInputModule组件是系统提供的标准输入模块和触摸输入模块，我们可以通过继承BaseInputModule实现自己的输入模块。<br>除了以上两个组件，还有一个很重要的组件通过EventSystem对象我们看不到，它是BaseRaycaster组件。BaseRaycaster也是一个基类，前面说的输入模块要检测到鼠标事件必须有射线投射组件才能确定目标对象。系统实现的射线投射类组件有PhysicsRaycaster, Physics2DRaycaster, GraphicRaycaster。这个模块也是可以自己继承BaseRaycaster实现个性化定制。<br>总的来说，EventSystem负责管理，BaseInputModule负责输入，BaseRaycaster负责确定目标对象，目标对象负责接收事件并处理，然后一个完整的事件系统就有了。<br>另外，其实这些说明官方都有提供，这里也就是把英文译成了中文，并整理下，加上自己的理解，有问题的地方请各路神仙多多指教。<br>官方文档在这里：<br>                  <a href="http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html" target="_blank" rel="external">http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.html</a></p>
 <h1 id="二、UGUI中的事件系统"><a href="#二、UGUI中的事件系统" class="headerlink" title="二、UGUI中的事件系统"></a>二、UGUI中的事件系统</h1><p>根据第一节中的说明，EventSystem和BaseInputModule是粘在一个对象上的，这两个模块在EventSystem对象上可以直接看到。那么，BaseRaycaster模块呢。。。<br>其实射线检测，肯定是从摄像机发起的，那么BaseRaycaster模块也一定和摄像机关系一定不简单。<br>对于UI模块，在Canvas对象下我们可以看到GraphicRaycaster组件。如果Canvas的渲染模式是SceenSpace-Overlay，那么我们是看不到Camera组件的。所以应该是GraphicRaycaster会对UI不同的渲染模式做特殊处理。<br>因为有GraphicRaycaster组件的原因，Canvas上的所有UI对象，都可以接受输入模块发出的事件，具体事件的处理在第四节说明。</p>
 <h1 id="三、场景对象中使用事件系统"><a href="#三、场景对象中使用事件系统" class="headerlink" title="三、场景对象中使用事件系统"></a>三、场景对象中使用事件系统</h1><p>场景中的非UI对象，如果想要接收输入模块的事件，一样的道理，也需要给摄像机挂上一个射线检测组件。PhysicsRaycaster, Physics2Draycaster这两个组件分别是用于3D和2D的场景。当然，还需要场景的对象挂了collider射线才检测的到。<br>         其实官方对射线检测也是做了说明的，如果不详读手册是不会发现的，这里是传送门：<br><a href="http://docs.unity3d.com/Manual/Raycasters.html" target="_blank" rel="external">http://docs.unity3d.com/Manual/Raycasters.html</a><br>         如果场景中只有一个射线检测源：When a Raycaster is present and enabled in the scene it will be used by the EventSystem whenever a query is issued from an InputModule.<br>如果场景中有多个射线检测源：If multiple Raycasters are used then they will all have casting happen against them and the results will be sorted based on distance to the elements.</p>

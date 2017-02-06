@@ -149,6 +149,27 @@ public void StopCountDown()
    StopCoroutine(&quot;CountDown&quot;);     
 }
 </code></pre><p>程序中，停掉一个根本没有的协程，是不会报错的</p>
+<h3 id="3-PlayerPrefs"><a href="#3-PlayerPrefs" class="headerlink" title="3. PlayerPrefs"></a>3. PlayerPrefs</h3><p> PlayerPrefs存储数据时，其在windows的存储路径是注册表：  </p>
+<p>HKEY_CURRENT_USER</p>
+<p>　　Software</p>
+<p>　　　　CompanyName</p>
+<p>　　　　　　ProjectName</p>
+<p>其中的CompanyName和ProjectName可以在Unity-&gt;Edit-&gt;Project Settings-&gt;Player中查看和设置。</p>
+<h3 id="4-更换鼠标"><a href="#4-更换鼠标" class="headerlink" title="4. 更换鼠标"></a>4. 更换鼠标</h3><p>1、鼠标图片更改为cursor，如果不设置 ，发布出来  鼠标是黑色方块</p>
+<p><img src="http://i.imgur.com/6QT5WoB.jpg" alt=""></p>
+<p>2、菜单：File-&gt;build settings-&gt; player settings  属性面板选择鼠标图标</p>
+<p><img src="http://i.imgur.com/E2pLhfk.jpg" alt=""></p>
+<h3 id="4-设置天空盒的两种方法"><a href="#4-设置天空盒的两种方法" class="headerlink" title="4. 设置天空盒的两种方法"></a>4. 设置天空盒的两种方法</h3><p>设置天空盒子有两种方法，一种是将天空盒子绑定到摄像机上，这样在摄像机的视野里看到的天空都是设置了我们的天空贴图的，但是如果切换摄像机就无法显示同一个天空了。第二种是在场景中添加天空盒子，这样避免了在多摄像机中切换摄像机所带来的天空显示不一致的问题。</p>
+<p>方法一：将天空盒子绑定到摄像机上</p>
+<p>首先，在Hierarchy视图中选中“Main Camera”。</p>
+<p>然后，点击菜单栏上的“Component”按钮，在弹出来的列表中点击“Rendering”–&gt;”Skybox“，如下图所示。</p>
+<p>接着在Inspector视图中可以看到添加了Skybox组件，点击组件最右侧的带有点的小圆圈，如下图所示。</p>
+<p>当点击带有点的小圆圈后会弹出一个“Select Material”窗口，可以看到里面有很多天空贴图，我们选择其中一个。</p>
+<p>选择过后，你可以在Inspector视图中的Skybox组件中看到刚才选中的天空贴图资源，这里我选择Sunny2 Skybox，如下图所示。</p>
+<p>最后，我们点击运行按钮，在Game视图中我们看一看到游戏场景中有背景天空了，如图所示。</p>
+<p>方法二：在场景中添加天空盒子<br>点击菜单栏上的“Window”按钮，在弹出来的下拉框中点击“Lighting”，如下图所示。</p>
+<p><img src="http://i.imgur.com/WW4Vwgh.png" alt=""></p>
+<p>在红色框内选择材质</p>
 
       
     </div>
